@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<robot name="snake" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- constants -->
+  <xacro:property name="pi" value="3.1415" />
+  <xacro:property name="joint_num" value="29" />
+
+  <xacro:property name="link_mass"   value="0.115" /> <!-- arbitrary value for link mass -->
+  <xacro:property name="link_length" value="0.0601" /> <!-- Square dimensions of links -->
+  <xacro:property name="link_radius" value="0.03" /> <!-- Square dimensions of links -->
+
+  <xacro:arg name="joint_name" default="joint"/>
+  <xacro:property name="joint_name" value="$(arg joint_name)" />
+  <xacro:arg name="link_name" default="link"/>
+  <xacro:property name="link_name" value="$(arg link_name)" />
+
+  <!-- macros -->
+  <xacro:macro name="snake_link" params="index isHead isMotorLink">
+    <link name="${link_name}${index}">
+      <visual>
+        <geometry>	
+	  <xacro:if value="${isMotorLink}"> 
+	    <mesh filename="package://snake_description/meshes/DAE/pitch.dae" />
+	  </xacro:if>
+	  <xacro:unless value="${isMotorLink}">
+	    <mesh filename="package://snake_description/meshes/DAE/yaw.dae" />
+	  </xacro:unless>
+        </geometry>
+      </visual>
+      
+      <!-- ====== for Gazebo ====== -->
+      <collision>      
+        <geometry>
+          <xacro:if value="${isMotorLink}"> 
+            <mesh filename="package://snake_description/meshes/DAE/pitch.dae" />
+	  </xacro:if>
+	  <xacro:unless value="${isMotorLink}">
+	    <mesh filename="package://snake_description/meshes/DAE/yaw.dae" />
+	  </xacro:unless>
+        </geometry>
+      </collision>
+      <inertial>       
+        <mass value="${link_mass}"/>
+        <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
+      </inertial>
+      <!-- == == == == == == == == == -->
+      
+    </link>
+  </xacro:macro>
+
+  <!-- joint -->
+  <xacro:macro name="snake_joint" params="index cl_index isPitch">
+    <joint name="${joint_name}${index}" type="revolute">
+      <parent link="${link_name}${index}"/>
+      <child link="${link_name}${cl_index}"/>
+      <origin xyz="${-link_length} 0 0"/>
+      <xacro:if value="${isPitch}">
+       <axis xyz="0 0 1"/>
+      </xacro:if>
+      <xacro:unless value="${isPitch}">
+       <axis xyz="0 1 0"/>
+      </xacro:unless>
+     
+      <!-- ====== for Gazebo  ======  -->
+      <limit effort="30" lower="-1.3" upper="1.3" velocity="1.571"/>
+      <dynamics damping="0.7"/>
+      <!-- == == == == == == == == == -->
+
+    </joint>
+  </xacro:macro>
+
+
+<!-- body units -->
+
+<xacro:snake_link index="0" isHead="ture" isMotorLink="true"/> 
+
+<xacro:snake_joint index="0" cl_index="1" isPitch="true"/>
+<xacro:snake_link index="1" isHead="false" isMotorLink="false"/>
+
+
+
+
+<!-- tail unit must be here -->
+<xacro:include filename="$(find snake_description)/urdf/snake.gazebo.xacro"/> 
+
+
+</robot>
+

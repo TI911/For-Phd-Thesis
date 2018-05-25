@@ -1,0 +1,35 @@
+22:41:32 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/snake_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py snake_msgs /home/ubuntu-ti/catkin_ws/src/snake_msgs/msg/snake_joint_command.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/all] Error 2
+make: *** [all] Error 2
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+
+22:41:32 Build Finished (took 107ms)
+

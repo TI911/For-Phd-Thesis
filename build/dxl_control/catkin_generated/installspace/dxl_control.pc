@@ -1,0 +1,8 @@
+prefix=/home/snake/catkin_ws/install
+
+Name: dxl_control
+Description: Description of dxl_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/catkin_ws/install/lib 
+Requires: roscpp std_msgs dynamixel_sdk snake_msgs

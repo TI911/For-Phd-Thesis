@@ -1,0 +1,8 @@
+prefix=/home/snake/catkin_ws/devel
+
+Name: snake_gazebo
+Description: Description of snake_gazebo
+Version: 1.0.0
+Cflags: 
+Libs: -L/home/snake/catkin_ws/devel/lib 
+Requires: roscpp std_msgs snake_msgs

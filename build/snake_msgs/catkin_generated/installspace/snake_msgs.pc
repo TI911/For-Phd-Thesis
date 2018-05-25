@@ -1,0 +1,8 @@
+prefix=/home/snake/catkin_ws/install
+
+Name: snake_msgs
+Description: Description of snake_msgs
+Version: 0.0.0
+Cflags: -I/home/snake/catkin_ws/install/include
+Libs: -L/home/snake/catkin_ws/install/lib 
+Requires: 

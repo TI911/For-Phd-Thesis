@@ -1,0 +1,440 @@
+11:55:33 **** Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: Nothing to be done for `all'.
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles 0
+12:58:59 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py joy_handler_HORI /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI/msg/JoySelectedData.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/all] Error 2
+make: *** [all] Error 2
+17:16:52 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py joy_handler_HORI /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI/msg/JoySelectedData.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/all] Error 2
+make: *** [all] Error 2
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+17:16:58 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py joy_handler_HORI /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI/msg/JoySelectedData.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/all] Error 2
+make: *** [all] Error 2
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+17:27:42 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `joy_handler_HORI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_cpp
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_HORI && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py joy_handler_HORI /home/ubuntu-ti/catkin_ws/src/joy_handler_HORI/msg/JoySelectedData.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [joy_handler_HORI/CMakeFiles/_joy_handler_HORI_generate_messages_check_deps_JoySelectedData.dir/all] Error 2
+make: *** [all] Error 2
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+20:35:48 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+-- Using CATKIN_DEVEL_PREFIX: /home/ubuntu-ti/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/ubuntu-ti/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/gtest': gtests will be built
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.6.18
+Traceback (most recent call last):
+  File "/home/ubuntu-ti/catkin_ws/build/catkin_generated/generate_cached_setup.py", line 20, in <module>
+    from catkin.environment_cache import generate_environment_script
+ImportError: No module named catkin.environment_cache
+CMake Error at /opt/ros/indigo/share/catkin/cmake/safe_execute_process.cmake:11 (message):
+  execute_process(/usr/bin/python
+  "/home/ubuntu-ti/catkin_ws/build/catkin_generated/generate_cached_setup.py")
+  returned error code 1
+Call Stack (most recent call first):
+  /opt/ros/indigo/share/catkin/cmake/all.cmake:186 (safe_execute_process)
+  /opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake:20 (include)
+  CMakeLists.txt:52 (find_package)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/ubuntu-ti/catkin_ws/build/CMakeFiles/CMakeOutput.log".
+See also "/home/ubuntu-ti/catkin_ws/build/CMakeFiles/CMakeError.log".
+make: *** [cmake_check_build_system] Error 1
+21:12:04 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build.make joy_handler_hori/CMakeFiles/joy_handler_hori.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_hori /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_hori /home/ubuntu-ti/catkin_ws/build/joy_handler_hori/CMakeFiles/joy_handler_hori.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build.make joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles  3
+[ 16%] Built target joy_handler_hori
+/usr/bin/make -f joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_hori /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_hori /home/ubuntu-ti/catkin_ws/build/joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_hori && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py joy_handler_hori /home/ubuntu-ti/catkin_ws/src/joy_handler_hori/msg/JoySelectedData.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: *** [joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData] Error 1
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/all] Error 2
+make: *** [all] Error 2
+13:59:19 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build.make joy_handler_hori/CMakeFiles/joy_handler_hori.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_hori /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_hori /home/ubuntu-ti/catkin_ws/build/joy_handler_hori/CMakeFiles/joy_handler_hori.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build.make joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles  3
+[ 12%] Built target joy_handler_hori
+/usr/bin/make -f joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_hori /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_hori /home/ubuntu-ti/catkin_ws/build/joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_hori && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py joy_handler_hori /home/ubuntu-ti/catkin_ws/src/joy_handler_hori/msg/JoySelectedData.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/all] Error 2
+make: *** [all] Error 2
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+15:01:02 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build.make joy_handler_hori/CMakeFiles/joy_handler_hori.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_hori /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_hori /home/ubuntu-ti/catkin_ws/build/joy_handler_hori/CMakeFiles/joy_handler_hori.dir/DependInfo.cmake --color=
+Scanning dependencies of target joy_handler_hori
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build.make joy_handler_hori/CMakeFiles/joy_handler_hori.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 3
+[ 12%] Building CXX object joy_handler_hori/CMakeFiles/joy_handler_hori.dir/src/joy_handler_hori.cpp.o
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_hori && /usr/bin/c++   -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"joy_handler_hori\" -I/home/ubuntu-ti/catkin_ws/devel/include -I/opt/ros/indigo/include    -o CMakeFiles/joy_handler_hori.dir/src/joy_handler_hori.cpp.o -c /home/ubuntu-ti/catkin_ws/src/joy_handler_hori/src/joy_handler_hori.cpp
+Linking CXX executable /home/ubuntu-ti/catkin_ws/devel/lib/joy_handler_hori/joy_handler_hori
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_hori && /usr/bin/cmake -E cmake_link_script CMakeFiles/joy_handler_hori.dir/link.txt --verbose=1
+/usr/bin/c++       CMakeFiles/joy_handler_hori.dir/src/joy_handler_hori.cpp.o  -o /home/ubuntu-ti/catkin_ws/devel/lib/joy_handler_hori/joy_handler_hori -rdynamic /opt/ros/indigo/lib/libroscpp.so -lboost_signals -lboost_filesystem /opt/ros/indigo/lib/librosconsole.so /opt/ros/indigo/lib/librosconsole_log4cxx.so /opt/ros/indigo/lib/librosconsole_backend_interface.so -llog4cxx -lboost_regex /opt/ros/indigo/lib/libxmlrpcpp.so /opt/ros/indigo/lib/libroscpp_serialization.so /opt/ros/indigo/lib/librostime.so -lboost_date_time /opt/ros/indigo/lib/libcpp_common.so -lboost_system -lboost_thread -lpthread -lconsole_bridge -Wl,-rpath,/opt/ros/indigo/lib 
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles  3
+[ 12%] Built target joy_handler_hori
+/usr/bin/make -f joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/joy_handler_hori /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/joy_handler_hori /home/ubuntu-ti/catkin_ws/build/joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build.make joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/joy_handler_hori && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py joy_handler_hori /home/ubuntu-ti/catkin_ws/src/joy_handler_hori/msg/JoySelectedData.msg 
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData] Error 1
+make[1]: *** [joy_handler_hori/CMakeFiles/_joy_handler_hori_generate_messages_check_deps_JoySelectedData.dir/all] Error 2
+make: *** [all] Error 2
+19:01:10 **** Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/snake_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py snake_msgs /home/ubuntu-ti/catkin_ws/src/snake_msgs/msg/snake_joint_command.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command] Error 1
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/all] Error 2
+make: *** [all] Error 2
+18:22:26 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/snake_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py snake_msgs /home/ubuntu-ti/catkin_ws/src/snake_msgs/msg/snake_joint_command.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/all] Error 2
+make: *** [all] Error 2
+15:53:56 **** Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/snake_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py snake_msgs /home/ubuntu-ti/catkin_ws/src/snake_msgs/msg/snake_joint_command.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/all] Error 2
+make: *** [all] Error 2
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+21:56:13 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/snake_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py snake_msgs /home/ubuntu-ti/catkin_ws/src/snake_msgs/msg/snake_joint_command.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/all] Error 2
+make: *** [all] Error 2
+22:41:32 **** Incremental Build of project build ****
+/usr/bin/make all 
+/usr/bin/cmake -H/home/ubuntu-ti/catkin_ws/src -B/home/ubuntu-ti/catkin_ws/build --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/ubuntu-ti/catkin_ws/build/CMakeFiles /home/ubuntu-ti/catkin_ws/build/CMakeFiles/progress.marks
+/usr/bin/make -f CMakeFiles/Makefile2 all
+make[1]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+make[2]: Nothing to be done for `snake_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build'.
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/cmake -E cmake_progress_report /home/ubuntu-ti/catkin_ws/build/CMakeFiles 
+[  0%] Built target std_msgs_generate_messages_lisp
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/depend
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/ubuntu-ti/catkin_ws/src /home/ubuntu-ti/catkin_ws/src/snake_msgs /home/ubuntu-ti/catkin_ws/build /home/ubuntu-ti/catkin_ws/build/snake_msgs /home/ubuntu-ti/catkin_ws/build/snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/DependInfo.cmake --color=
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+/usr/bin/make -f snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build.make snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/build
+make[2]: Entering directory `/home/ubuntu-ti/catkin_ws/build'
+cd /home/ubuntu-ti/catkin_ws/build/snake_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py snake_msgs /home/ubuntu-ti/catkin_ws/src/snake_msgs/msg/snake_joint_command.msg 
+Traceback (most recent call last):
+  File "/opt/ros/indigo/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py", line 41, in <module>
+    from genmsg import EXT_MSG, EXT_SRV, MsgContext
+ImportError: No module named genmsg
+make[2]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command] Error 1
+make[2]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+make[1]: *** [snake_msgs/CMakeFiles/_snake_msgs_generate_messages_check_deps_snake_joint_command.dir/all] Error 2
+make: *** [all] Error 2
+make[1]: Leaving directory `/home/ubuntu-ti/catkin_ws/build'
+
+Invoking autoreconf in build directory: /home/snake/catkin_ws/src/snake_control/src/
+
+sh -c "autoreconf -i" 
+sh: 1: autoreconf: not found
+
+Configuration failed with error
+Build stopped
+()

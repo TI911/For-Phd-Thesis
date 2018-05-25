@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/snake/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec4030787222/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec4030787222.dir/build.make CMakeFiles/cmTryCompileExec4030787222.dir/build
+make[1]: ディレクトリ `/home/snake/catkin_ws/build/CMakeFiles/CMakeTmp' に入ります
+/usr/bin/cmake -E cmake_progress_report /home/snake/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec4030787222.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec4030787222.dir/CheckSymbolExists.c.o   -c /home/snake/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec4030787222
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec4030787222.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec4030787222.dir/CheckSymbolExists.c.o  -o cmTryCompileExec4030787222 -rdynamic 
+CMakeFiles/cmTryCompileExec4030787222.dir/CheckSymbolExists.c.o: 関数 `main' 内:
+CheckSymbolExists.c:(.text+0xa): `pthread_create' に対する定義されていない参照です
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec4030787222] エラー 1
+make[1]: ディレクトリ `/home/snake/catkin_ws/build/CMakeFiles/CMakeTmp' から出ます
+make: *** [cmTryCompileExec4030787222/fast] エラー 2
+
+File /home/snake/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/snake/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec856947885/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec856947885.dir/build.make CMakeFiles/cmTryCompileExec856947885.dir/build
+make[1]: ディレクトリ `/home/snake/catkin_ws/build/CMakeFiles/CMakeTmp' に入ります
+/usr/bin/cmake -E cmake_progress_report /home/snake/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec856947885.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec856947885.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec856947885
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec856947885.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec856947885.dir/CheckFunctionExists.c.o  -o cmTryCompileExec856947885 -rdynamic -lpthreads 
+/usr/bin/ld: -lpthreads が見つかりません
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec856947885] エラー 1
+make[1]: ディレクトリ `/home/snake/catkin_ws/build/CMakeFiles/CMakeTmp' から出ます
+make: *** [cmTryCompileExec856947885/fast] エラー 2
+
+

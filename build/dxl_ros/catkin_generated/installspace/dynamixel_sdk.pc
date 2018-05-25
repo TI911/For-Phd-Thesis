@@ -1,0 +1,8 @@
+prefix=/home/snake/catkin_ws/install
+
+Name: dynamixel_sdk
+Description: Description of dynamixel_sdk
+Version: 3.4.1
+Cflags: -I/home/snake/catkin_ws/install/include
+Libs: -L/home/snake/catkin_ws/install/lib -ldynamixel_sdk
+Requires: 

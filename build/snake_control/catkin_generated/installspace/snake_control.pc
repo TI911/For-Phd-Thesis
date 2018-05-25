@@ -1,0 +1,8 @@
+prefix=/home/snake/catkin_ws/install
+
+Name: snake_control
+Description: Description of snake_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/snake/catkin_ws/install/lib 
+Requires: joy_handler_hori roscpp

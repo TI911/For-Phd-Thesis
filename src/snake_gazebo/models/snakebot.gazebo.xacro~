@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro">  
+
+  <xacro:arg name="link_name" default="link"/>
+  <xacro:property name="link_name" value="$(arg link_name)" />
+
+  <xacro:macro name="links" params="index" >
+    <gazebo reference="${link_name}${index}">
+	  <selfCollide>true</selfCollide>
+      <mu1 value="0.05" />
+      <mu2 value="0.05" />
+    </gazebo>
+  </xacro:macro>
+
+<!-- body units -->
+<xacro:snakebot_link index="0"/>
+<xacro:snakebot_link index="1"/>
+<xacro:snakebot_link index="2"/>
+<xacro:snakebot_link index="3"/>
+<xacro:snakebot_link index="4"/>
+<xacro:snakebot_link index="5"/>
+<xacro:snakebot_link index="6"/>
+<xacro:snakebot_link index="7"/>
+<xacro:snakebot_link index="8"/>
+<xacro:snakebot_link index="9"/>
+<xacro:snakebot_link index="10"/>
+<xacro:snakebot_link index="11"/>
+<xacro:snakebot_link index="12"/>
+<xacro:snakebot_link index="13"/>
+<xacro:snakebot_link index="14"/>
+<xacro:snakebot_link index="15"/>
+<xacro:snakebot_link index="16"/>
+<xacro:snakebot_link index="17"/>
+<xacro:snakebot_link index="18"/>
+<xacro:snakebot_link index="19"/>
+<xacro:snakebot_link index="20"/>
+<xacro:snakebot_link index="21"/>
+<xacro:snakebot_link index="22"/>
+<xacro:snakebot_link index="23"/>
+<xacro:snakebot_link index="24"/>
+<xacro:snakebot_link index="25"/>
+<xacro:snakebot_link index="26"/>
+<xacro:snakebot_link index="27"/>
+<xacro:snakebot_link index="28"/>
+<xacro:snakebot_link index="29"/>
+<xacro:snakebot_link index="30"/>
+<xacro:snakebot_link index="31"/>
+
+
+</robot>

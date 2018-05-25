@@ -1,0 +1,2 @@
+dxl_control:dxl_ros:joy_handler_hori:snake_control:snake_description:snake_gazebo:snake_msgs
+-DCATKIN_DEVEL_PREFIX=/home/snake/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/snake/catkin_ws/install -G Unix Makefiles
