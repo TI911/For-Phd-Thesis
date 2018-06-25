@@ -17,21 +17,12 @@ void ShiftControlMethod::Init(RobotSpec spec)
    	for(int i=0; i<NUM_JOINT; i++){
    		hold_data.shift_param[i].bias_hold.resize(max_hold_num, 0);
    		hold_data.shift_param[i].kappa_hold.resize(max_hold_num, 0);
-   		hold_data.shift_param[i].kappa_zero_hold.resize(max_hold_num, 0);
+   		hold_data.shift_param[i].kappa_zero_pitch_hold.resize(max_hold_num, 0);
+   		hold_data.shift_param[i].kappa_zero_yaw_hold.resize(max_hold_num, 0);
    		hold_data.shift_param[i].tau_hold.resize(max_hold_num, 0);
    		hold_data.shift_param[i].psi_hold.resize(max_hold_num, 0);
    		hold_data.shift_param[i].psi_hyper_hold.resize(max_hold_num, 0);
    	}
-
-//for(int i=0; i<NUM_JOINT; i++){
-		//  ヘビ関節の vector をクリアする
-		snake_model_param.bias.resize(max_hold_num, 0);
-		snake_model_param.kappa.resize(max_hold_num, 0);
-		snake_model_param.kappa_zero.resize(max_hold_num, 0);
-		snake_model_param.tau.resize(max_hold_num, 0);
-		snake_model_param.psi.resize(max_hold_num, 0);
-//}
-
 }
 
 /***
@@ -46,7 +37,8 @@ void ShiftControlMethod::Shift_Param_Forward(RobotSpec spec)
 	//  ヘビ関節の vector をクリアする
 	snake_model_param.bias.clear();
 	snake_model_param.kappa.clear();
-	snake_model_param.kappa_zero.clear();
+	snake_model_param.kappa_zero_pitch.clear();
+	snake_model_param.kappa_zero_yaw.clear();
 	snake_model_param.tau.clear();
 	snake_model_param.psi.clear();
 	snake_model_param.psi_hyper.clear();
@@ -55,7 +47,8 @@ void ShiftControlMethod::Shift_Param_Forward(RobotSpec spec)
 	// 先頭デックの最初の要素に現在κ...を追加 (デックの長さ前より＋１になる)
 	hold_data.shift_param[0].bias_hold.insert(hold_data.shift_param[0].bias_hold.begin(), bias_);
 	hold_data.shift_param[0].kappa_hold.insert(hold_data.shift_param[0].kappa_hold.begin(), kappa_);
-	hold_data.shift_param[0].kappa_zero_hold.insert(hold_data.shift_param[0].kappa_zero_hold.begin(), kappa_zero_);
+	hold_data.shift_param[0].kappa_zero_pitch_hold.insert(hold_data.shift_param[0].kappa_zero_pitch_hold.begin(), kappa_zero_pitch_);
+	hold_data.shift_param[0].kappa_zero_yaw_hold.insert(hold_data.shift_param[0].kappa_zero_yaw_hold.begin(), kappa_zero_yaw_);
 	hold_data.shift_param[0].tau_hold.insert(hold_data.shift_param[0].tau_hold.begin(), tau_);
 	hold_data.shift_param[0].psi_hold.insert(hold_data.shift_param[0].psi_hold.begin(), psi_);
 	hold_data.shift_param[0].psi_hyper_hold.insert(hold_data.shift_param[0].psi_hyper_hold.begin(), psi_hyper_);
@@ -66,7 +59,8 @@ void ShiftControlMethod::Shift_Param_Forward(RobotSpec spec)
 	for(int i=1; i<NUMOFLINK; i++){
 		hold_data.shift_param[i].bias_hold.insert(hold_data.shift_param[i].bias_hold.begin(), hold_data.shift_param[i-1].bias_hold[hold_num-1]);
 		hold_data.shift_param[i].kappa_hold.insert(hold_data.shift_param[i].kappa_hold.begin(), hold_data.shift_param[i-1].kappa_hold[hold_num-1]);
-		hold_data.shift_param[i].kappa_zero_hold.insert(hold_data.shift_param[i].kappa_zero_hold.begin(), hold_data.shift_param[i-1].kappa_zero_hold[hold_num-1]);
+		hold_data.shift_param[i].kappa_zero_pitch_hold.insert(hold_data.shift_param[i].kappa_zero_pitch_hold.begin(), hold_data.shift_param[i-1].kappa_zero_pitch_hold[hold_num-1]);
+		hold_data.shift_param[i].kappa_zero_yaw_hold.insert(hold_data.shift_param[i].kappa_zero_yaw_hold.begin(), hold_data.shift_param[i-1].kappa_zero_yaw_hold[hold_num-1]);
 		hold_data.shift_param[i].tau_hold.insert(hold_data.shift_param[i].tau_hold.begin(), hold_data.shift_param[i-1].tau_hold[hold_num-1]);
 		hold_data.shift_param[i].psi_hold.insert(hold_data.shift_param[i].psi_hold.begin(), hold_data.shift_param[i-1].psi_hold[hold_num-1]);
 		hold_data.shift_param[i].psi_hyper_hold.insert(hold_data.shift_param[i].psi_hyper_hold.begin(), hold_data.shift_param[i-1].psi_hyper_hold[hold_num-1]);
@@ -81,15 +75,17 @@ void ShiftControlMethod::Shift_Param_Forward(RobotSpec spec)
 
    	    snake_model_param.bias.push_back(hold_data.shift_param[i].bias_hold[hold_num-1]);
         snake_model_param.kappa.push_back(hold_data.shift_param[i].kappa_hold[hold_num-1]);
-        snake_model_param.kappa_zero.push_back(hold_data.shift_param[i].kappa_zero_hold[hold_num-1]);
+        snake_model_param.kappa_zero_pitch.push_back(hold_data.shift_param[i].kappa_zero_pitch_hold[hold_num-1]);
+        snake_model_param.kappa_zero_yaw.push_back(hold_data.shift_param[i].kappa_zero_yaw_hold[hold_num-1]);
    	    snake_model_param.tau.push_back(hold_data.shift_param[i].tau_hold[hold_num-1]);
    	    snake_model_param.psi.push_back(hold_data.shift_param[i].psi_hold[hold_num-1]);
         snake_model_param.psi_hyper.push_back(hold_data.shift_param[i].psi_hyper_hold[hold_num-1]);
 
-        // 角度保持 vectorは＋１になりましたので，vector 最後の要素を削除する     ----> max hold num - 1
+    // 角度保持 vectorは＋１になりましたので，vector 最後の要素を削除する     ----> max hold num - 1
 		hold_data.shift_param[i].bias_hold.pop_back();
 		hold_data.shift_param[i].kappa_hold.pop_back();
-		hold_data.shift_param[i].kappa_zero_hold.pop_back();
+		hold_data.shift_param[i].kappa_zero_pitch_hold.pop_back();
+		hold_data.shift_param[i].kappa_zero_yaw_hold.pop_back();
 		hold_data.shift_param[i].tau_hold.pop_back();
 		hold_data.shift_param[i].psi_hold.pop_back();
 		hold_data.shift_param[i].psi_hyper_hold.pop_back();
@@ -108,53 +104,58 @@ void ShiftControlMethod::Shift_Param_Back(RobotSpec spec)
 	//  ヘビ関節の vector をクリアする
 	snake_model_param.bias.clear();
 	snake_model_param.kappa.clear();
-	snake_model_param.kappa_zero.clear();
 	snake_model_param.tau.clear();
 	snake_model_param.psi.clear();
 	snake_model_param.psi_hyper.clear();
 
 	// kappa, tau, psi と psi_hyper を先頭ユニットの vector の先頭から入れる
 	// 先頭デックの最初の要素に現在κ...を追加 (デックの長さ前より＋１になる)
-	hold_data.shift_param[0].bias_hold.insert(hold_data.shift_param[0].bias_hold.begin(), bias_);
-	hold_data.shift_param[0].kappa_hold.insert(hold_data.shift_param[0].kappa_hold.begin(), kappa_);
-	hold_data.shift_param[0].kappa_zero_hold.insert(hold_data.shift_param[0].kappa_zero_hold.begin(), kappa_zero_);
-	hold_data.shift_param[0].tau_hold.insert(hold_data.shift_param[0].tau_hold.begin(), tau_);
-	hold_data.shift_param[0].psi_hold.insert(hold_data.shift_param[0].psi_hold.begin(), psi_);
-	hold_data.shift_param[0].psi_hyper_hold.insert(hold_data.shift_param[0].psi_hyper_hold.begin(), psi_hyper_);
+	hold_data.shift_param[NUMOFLINK-1].bias_hold.push_back(bias_);
+	hold_data.shift_param[NUMOFLINK-1].kappa_hold.push_back(kappa_);
+	hold_data.shift_param[NUMOFLINK-1].kappa_zero_pitch_hold.push_back(kappa_zero_pitch_);
+	hold_data.shift_param[NUMOFLINK-1].kappa_zero_yaw_hold.push_back(kappa_zero_yaw_);
+	hold_data.shift_param[NUMOFLINK-1].tau_hold.push_back(tau_);
+	hold_data.shift_param[NUMOFLINK-1].psi_hold.push_back(psi_);
+	hold_data.shift_param[NUMOFLINK-1].psi_hyper_hold.push_back(psi_hyper_);
 
 	// 一つ前の関節の vector の最後のものを次の関節の vector の先頭から追加する
 	int hold_num = (int)hold_data.shift_param[0].kappa_hold.size();   // --> max hold num + 1
-	//ROS_INFO("hold_num size = %d", hold_num);
+  //ROS_INFO("hold_num size = %d", hold_num);
 	for(int i=1; i<NUMOFLINK; i++){
-		hold_data.shift_param[i].bias_hold.insert(hold_data.shift_param[i].bias_hold.begin(), hold_data.shift_param[i-1].bias_hold[hold_num-1]);
-		hold_data.shift_param[i].kappa_hold.insert(hold_data.shift_param[i].kappa_hold.begin(), hold_data.shift_param[i-1].kappa_hold[hold_num-1]);
-		hold_data.shift_param[i].kappa_zero_hold.insert(hold_data.shift_param[i].kappa_zero_hold.begin(), hold_data.shift_param[i-1].kappa_zero_hold[hold_num-1]);
-		hold_data.shift_param[i].tau_hold.insert(hold_data.shift_param[i].tau_hold.begin(), hold_data.shift_param[i-1].tau_hold[hold_num-1]);
-		hold_data.shift_param[i].psi_hold.insert(hold_data.shift_param[i].psi_hold.begin(), hold_data.shift_param[i-1].psi_hold[hold_num-1]);
-		hold_data.shift_param[i].psi_hyper_hold.insert(hold_data.shift_param[i].psi_hyper_hold.begin(), hold_data.shift_param[i-1].psi_hyper_hold[hold_num-1]);
+		hold_data.shift_param[NUMOFLINK-i-1].bias_hold.push_back(hold_data.shift_param[NUMOFLINK-i].bias_hold[1]);
+		hold_data.shift_param[NUMOFLINK-i-1].kappa_hold.push_back(hold_data.shift_param[NUMOFLINK-i].kappa_hold[1]);
+		hold_data.shift_param[NUMOFLINK-i-1].kappa_zero_pitch_hold.push_back(hold_data.shift_param[NUMOFLINK-i].kappa_zero_pitch_hold[1]);
+		hold_data.shift_param[NUMOFLINK-i-1].kappa_zero_yaw_hold.push_back(hold_data.shift_param[NUMOFLINK-i-1].kappa_zero_yaw_hold[1]);
+		hold_data.shift_param[NUMOFLINK-i-1].tau_hold.push_back(hold_data.shift_param[NUMOFLINK-i].tau_hold[1]);
+		hold_data.shift_param[NUMOFLINK-i-1].psi_hold.push_back(hold_data.shift_param[NUMOFLINK-i].psi_hold[1]);
+		hold_data.shift_param[NUMOFLINK-i-1].psi_hyper_hold.push_back(hold_data.shift_param[NUMOFLINK-i].psi_hyper_hold[1]);
 	}
-
+  //  ROS_INFO("hold_num size = %d", hold_num);
 	// 角度保持 vector の末尾のκ... などのデータを読み取る   -->  ヘビ関節 vector の先頭から追加する
 	// _________________________________________________________________
 	// | 一番初めに入れたデータ | <-- | <-- | <-- | <-- | <-- | <-- |   <--    <--    <--  | <---     |
 	// |_______末尾_________|___|___|___|___|___|___|_____________|_先頭_|
 	//    n                  6   5   4   3   2   1    ........       0
 	for(int i=0; i<NUMOFLINK; i++){
-		snake_model_param.kappa.insert(snake_model_param.kappa.begin(), hold_data.shift_param[i].kappa_hold[hold_num-1]);
-		snake_model_param.kappa_zero.insert(snake_model_param.kappa_zero.begin(), hold_data.shift_param[i].kappa_zero_hold[hold_num-1]);
-   	    snake_model_param.tau.insert(snake_model_param.tau.begin(), hold_data.shift_param[i].tau_hold[hold_num-1]);
-   	    snake_model_param.bias.insert(snake_model_param.bias.begin(), hold_data.shift_param[i].bias_hold[hold_num-1]);
-   	    snake_model_param.psi.insert(snake_model_param.psi.begin(), hold_data.shift_param[i].psi_hold[hold_num-1]);
-        snake_model_param.psi_hyper.insert(snake_model_param.psi_hyper.begin(), hold_data.shift_param[i].psi_hyper_hold[hold_num-1]);
+		snake_model_param.kappa.insert(snake_model_param.kappa.begin(), hold_data.shift_param[NUMOFLINK-i-1].kappa_hold[hold_num-1]);
+		snake_model_param.kappa_zero_pitch.insert(snake_model_param.kappa_zero_pitch.begin(), hold_data.shift_param[NUMOFLINK-i-1].kappa_zero_pitch_hold[hold_num-1]);
+		snake_model_param.kappa_zero_yaw.insert(snake_model_param.kappa_zero_yaw.begin(), hold_data.shift_param[NUMOFLINK-i-1].kappa_zero_yaw_hold[hold_num-1]);
+    snake_model_param.tau.insert(snake_model_param.tau.begin(), hold_data.shift_param[NUMOFLINK-i-1].tau_hold[hold_num-1]);
+    snake_model_param.bias.insert(snake_model_param.bias.begin(), hold_data.shift_param[NUMOFLINK-i-1].bias_hold[hold_num-1]);
+   	snake_model_param.psi.insert(snake_model_param.psi.begin(), hold_data.shift_param[i].psi_hold[hold_num-1]);
+    snake_model_param.psi_hyper.insert(snake_model_param.psi_hyper.begin(), hold_data.shift_param[NUMOFLINK-i-1].psi_hyper_hold[hold_num-1]);
 
-        // 角度保持 vectorは＋１になりましたので，vector 最後の要素を削除する     ----> max hold num - 1
-		hold_data.shift_param[i].bias_hold.pop_back();
-		hold_data.shift_param[i].kappa_hold.pop_back();
-		hold_data.shift_param[i].kappa_zero_hold.pop_back();
-		hold_data.shift_param[i].tau_hold.pop_back();
-		hold_data.shift_param[i].psi_hold.pop_back();
-		hold_data.shift_param[i].psi_hyper_hold.pop_back();
+    // 角度保持 vectorは＋１になりましたので，vector 最後の要素を削除する     ----> max hold num - 1
+		hold_data.shift_param[i].bias_hold.erase(hold_data.shift_param[i].bias_hold.begin());
+		hold_data.shift_param[i].kappa_hold.erase(hold_data.shift_param[i].kappa_hold.begin());
+		hold_data.shift_param[i].kappa_zero_pitch_hold.erase(hold_data.shift_param[i].kappa_zero_pitch_hold.begin());
+		hold_data.shift_param[i].kappa_zero_yaw_hold.erase(hold_data.shift_param[i].kappa_zero_yaw_hold.begin());
+		hold_data.shift_param[i].tau_hold.erase(hold_data.shift_param[i].tau_hold.begin());
+		hold_data.shift_param[i].psi_hold.erase(hold_data.shift_param[i].psi_hold.begin());
+		hold_data.shift_param[i].psi_hyper_hold.erase(hold_data.shift_param[i].psi_hyper_hold.begin());
 	}
+	//int snake_model_param_num = (int)snake_model_param.kappa.size();//hold_data.shift_param[0].kappa_hold.size();   // --> max hold num + 1
+	//ROS_INFO("snake_model_param= %d", snake_model_param_num);
 }
 
 /***

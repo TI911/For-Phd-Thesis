@@ -406,7 +406,7 @@ void SnakeControl::OperateMoveTest(joy_handler_hori::JoySelectedData joy_data)
    // SnakebotControlRequest::RequestJointReadPositionAll();
     init_flag = 0;
     return;
-  }else{
+ fffff }else{
     //SnakeControlRequest::RequestJointActivateAll();
     ///SnakebotControlRequest::RequestJointSetPosition(target_joint_angle);
    // SnakebotControlRequest::RequestJointReadPositionAll();

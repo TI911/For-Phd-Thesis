@@ -7,7 +7,7 @@ import struct
 
 
 class snake_joint_command4V2(genpy.Message):
-  _md5sum = "98733b4db6a7f1e04c0c9705a6f736e6"
+  _md5sum = "ff9d83f9d23ae1d20dd9df2f830a01e3"
   _type = "snake_msgs/snake_joint_command4V2"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """###############################################################################
@@ -34,7 +34,8 @@ float64[] target_position     # [deg]
 
 # <D>　PIDゲインを設定する．
 # Dynamixelの場合はそのまま書き込まれる値
-bool set_pid_gain  
+bool set_pid_gain 
+bool set_pid_ 
 uint32 p_gain  #  Dynamixel:[-]
 uint32 i_gain  #  Dynamixel:[-]
 uint32 d_gain  #  Dynamixel:[-]
@@ -59,8 +60,8 @@ bool read_parameter_by_address
 uint8 address_to_read
 uint8 length_read  # 1~7 読み込むデータのバイト数
 """
-  __slots__ = ['joint_index','target_all','set_position','change_mode_to_free','change_mode_to_active','clear_error','target_position','set_pid_gain','p_gain','i_gain','d_gain','read_position','read_velosity','read_current','read_voltage','read_motor_temperature','read_position_velosity','read_position_current','read_position_velosity_current','set_parameter_by_address','address_to_set','length_set','data_to_set','read_parameter_by_address','address_to_read','length_read']
-  _slot_types = ['uint8','bool','bool','bool','bool','bool','float64[]','bool','uint32','uint32','uint32','bool','bool','bool','bool','bool','bool','bool','bool','bool','uint8','uint8','uint8[]','bool','uint8','uint8']
+  __slots__ = ['joint_index','target_all','set_position','change_mode_to_free','change_mode_to_active','clear_error','target_position','set_pid_gain','set_pid_','p_gain','i_gain','d_gain','read_position','read_velosity','read_current','read_voltage','read_motor_temperature','read_position_velosity','read_position_current','read_position_velosity_current','set_parameter_by_address','address_to_set','length_set','data_to_set','read_parameter_by_address','address_to_read','length_read']
+  _slot_types = ['uint8','bool','bool','bool','bool','bool','float64[]','bool','bool','uint32','uint32','uint32','bool','bool','bool','bool','bool','bool','bool','bool','bool','uint8','uint8','uint8[]','bool','uint8','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -70,7 +71,7 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       joint_index,target_all,set_position,change_mode_to_free,change_mode_to_active,clear_error,target_position,set_pid_gain,p_gain,i_gain,d_gain,read_position,read_velosity,read_current,read_voltage,read_motor_temperature,read_position_velosity,read_position_current,read_position_velosity_current,set_parameter_by_address,address_to_set,length_set,data_to_set,read_parameter_by_address,address_to_read,length_read
+       joint_index,target_all,set_position,change_mode_to_free,change_mode_to_active,clear_error,target_position,set_pid_gain,set_pid_,p_gain,i_gain,d_gain,read_position,read_velosity,read_current,read_voltage,read_motor_temperature,read_position_velosity,read_position_current,read_position_velosity_current,set_parameter_by_address,address_to_set,length_set,data_to_set,read_parameter_by_address,address_to_read,length_read
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -95,6 +96,8 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
         self.target_position = []
       if self.set_pid_gain is None:
         self.set_pid_gain = False
+      if self.set_pid_ is None:
+        self.set_pid_ = False
       if self.p_gain is None:
         self.p_gain = 0
       if self.i_gain is None:
@@ -140,6 +143,7 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
       self.clear_error = False
       self.target_position = []
       self.set_pid_gain = False
+      self.set_pid_ = False
       self.p_gain = 0
       self.i_gain = 0
       self.d_gain = 0
@@ -178,7 +182,7 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
       pattern = '<%sd'%length
       buff.write(struct.pack(pattern, *self.target_position))
       _x = self
-      buff.write(_struct_B3I11B.pack(_x.set_pid_gain, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set))
+      buff.write(_struct_2B3I11B.pack(_x.set_pid_gain, _x.set_pid_, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set))
       _x = self.data_to_set
       length = len(_x)
       # - if encoded as a list instead, serialize as bytes instead of string
@@ -216,9 +220,10 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
       self.target_position = struct.unpack(pattern, str[start:end])
       _x = self
       start = end
-      end += 24
-      (_x.set_pid_gain, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set,) = _struct_B3I11B.unpack(str[start:end])
+      end += 25
+      (_x.set_pid_gain, _x.set_pid_, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set,) = _struct_2B3I11B.unpack(str[start:end])
       self.set_pid_gain = bool(self.set_pid_gain)
+      self.set_pid_ = bool(self.set_pid_)
       self.read_position = bool(self.read_position)
       self.read_velosity = bool(self.read_velosity)
       self.read_current = bool(self.read_current)
@@ -258,7 +263,7 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
       pattern = '<%sd'%length
       buff.write(self.target_position.tostring())
       _x = self
-      buff.write(_struct_B3I11B.pack(_x.set_pid_gain, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set))
+      buff.write(_struct_2B3I11B.pack(_x.set_pid_gain, _x.set_pid_, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set))
       _x = self.data_to_set
       length = len(_x)
       # - if encoded as a list instead, serialize as bytes instead of string
@@ -297,9 +302,10 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
       self.target_position = numpy.frombuffer(str[start:end], dtype=numpy.float64, count=length)
       _x = self
       start = end
-      end += 24
-      (_x.set_pid_gain, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set,) = _struct_B3I11B.unpack(str[start:end])
+      end += 25
+      (_x.set_pid_gain, _x.set_pid_, _x.p_gain, _x.i_gain, _x.d_gain, _x.read_position, _x.read_velosity, _x.read_current, _x.read_voltage, _x.read_motor_temperature, _x.read_position_velosity, _x.read_position_current, _x.read_position_velosity_current, _x.set_parameter_by_address, _x.address_to_set, _x.length_set,) = _struct_2B3I11B.unpack(str[start:end])
       self.set_pid_gain = bool(self.set_pid_gain)
+      self.set_pid_ = bool(self.set_pid_)
       self.read_position = bool(self.read_position)
       self.read_velosity = bool(self.read_velosity)
       self.read_current = bool(self.read_current)
@@ -327,4 +333,4 @@ uint8 length_read  # 1~7 読み込むデータのバイト数
 _struct_I = genpy.struct_I
 _struct_3B = struct.Struct("<3B")
 _struct_6B = struct.Struct("<6B")
-_struct_B3I11B = struct.Struct("<B3I11B")
+_struct_2B3I11B = struct.Struct("<2B3I11B")

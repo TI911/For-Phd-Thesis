@@ -60,27 +60,27 @@ void timerCallback(const ros::TimerEvent& event)
 		mode=1;    // 横うねり推進
 		ROS_INFO("***   Winding Gait  -->  ***");
 	}
-    if(mode==1){
-    	SnakeControl::OperateMoveWindingShift(joystick);
-    }
+  if(mode==1){
+  	SnakeControl::OperateMoveWindingShift(joystick);
+  }
 
     /* sinus liftinhg */
 	if (joystick.button_select and joystick.button_r2) {
 		mode=2;    //sinus liftinhg
 		ROS_INFO("***  sinus liftinhg -->  ***");
 	}
-    if(mode==2){
-    	SnakeControl::OperateMoveSinusLifting(joystick);
-    }
+  if(mode==2){
+    SnakeControl::OperateMoveSinusLifting(joystick);
+  }
 
     /* pedal wave motion */
 	if (joystick.button_select and joystick.button_l1) {
 		mode=3;    //pedal wave motion
 		ROS_INFO("***  pedal wave motion -->  ***");
 	}
-    if(mode==3){
-    	SnakeControl::OperateMovePedalWaveMotion(joystick);
-    }
+  if(mode==3){
+  	SnakeControl::OperateMovePedalWaveMotion(joystick);
+  }
 
     /* sidewinding */
 	if (joystick.button_select and joystick.button_l2) {

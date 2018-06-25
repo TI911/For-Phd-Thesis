@@ -47,6 +47,11 @@
     :initarg :set_pid_gain
     :type cl:boolean
     :initform cl:nil)
+   (set_pid_
+    :reader set_pid_
+    :initarg :set_pid_
+    :type cl:boolean
+    :initform cl:nil)
    (p_gain
     :reader p_gain
     :initarg :p_gain
@@ -187,6 +192,11 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader snake_msgs-msg:set_pid_gain-val is deprecated.  Use snake_msgs-msg:set_pid_gain instead.")
   (set_pid_gain m))
 
+(cl:ensure-generic-function 'set_pid_-val :lambda-list '(m))
+(cl:defmethod set_pid_-val ((m <snake_joint_command4V2>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader snake_msgs-msg:set_pid_-val is deprecated.  Use snake_msgs-msg:set_pid_ instead.")
+  (set_pid_ m))
+
 (cl:ensure-generic-function 'p_gain-val :lambda-list '(m))
 (cl:defmethod p_gain-val ((m <snake_joint_command4V2>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader snake_msgs-msg:p_gain-val is deprecated.  Use snake_msgs-msg:p_gain instead.")
@@ -300,6 +310,7 @@
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream)))
    (cl:slot-value msg 'target_position))
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'set_pid_gain) 1 0)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:if (cl:slot-value msg 'set_pid_) 1 0)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'p_gain)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'p_gain)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 16) (cl:slot-value msg 'p_gain)) ostream)
@@ -361,6 +372,7 @@
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:aref vals i) (roslisp-utils:decode-double-float-bits bits))))))
     (cl:setf (cl:slot-value msg 'set_pid_gain) (cl:not (cl:zerop (cl:read-byte istream))))
+    (cl:setf (cl:slot-value msg 'set_pid_) (cl:not (cl:zerop (cl:read-byte istream))))
     (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'p_gain)) (cl:read-byte istream))
     (cl:setf (cl:ldb (cl:byte 8 8) (cl:slot-value msg 'p_gain)) (cl:read-byte istream))
     (cl:setf (cl:ldb (cl:byte 8 16) (cl:slot-value msg 'p_gain)) (cl:read-byte istream))
@@ -406,16 +418,16 @@
   "snake_msgs/snake_joint_command4V2")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<snake_joint_command4V2>)))
   "Returns md5sum for a message object of type '<snake_joint_command4V2>"
-  "98733b4db6a7f1e04c0c9705a6f736e6")
+  "ff9d83f9d23ae1d20dd9df2f830a01e3")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'snake_joint_command4V2)))
   "Returns md5sum for a message object of type 'snake_joint_command4V2"
-  "98733b4db6a7f1e04c0c9705a6f736e6")
+  "ff9d83f9d23ae1d20dd9df2f830a01e3")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<snake_joint_command4V2>)))
   "Returns full string definition for message of type '<snake_joint_command4V2>"
-  (cl:format cl:nil "###############################################################################~%# dxl_control nodeに送るコマンド~%# 実行したいコマンドをtrueにしてpublishすると実行される~%# 送信するデータがあるものは該当するデータを埋めてからpublishすること~%# 対象の関節をjoint_indexで指定するか，全ての関節を対象とする場合はtarget_allをtrueにする~%#~%# Dynamixelが<D>であり，書かれているものには対応している~%###############################################################################~%~%#--- 対称を指定~%uint8 joint_index  # index number of joint~%bool target_all    # 全ての関節を対象とする場合はこれをtrueにする．その場合joint_indexは無意味~%~%#--- 書き込み~%bool set_position           # <D>　目標位置を指示する target_positionが必要~%~%bool change_mode_to_free    # <D>　モーターをフリーにする~%bool change_mode_to_active  # <D>　モーターの制御を有効化する．トルクが入る~%bool clear_error            # <D>　エラーによる停止状態を解除する~%~%float64[] target_position     # [deg]~%~%# <D>　PIDゲインを設定する．~%# Dynamixelの場合はそのまま書き込まれる値~%bool set_pid_gain  ~%uint32 p_gain  #  Dynamixel:[-]~%uint32 i_gain  #  Dynamixel:[-]~%uint32 d_gain  #  Dynamixel:[-]~%~%#--- 読み込み~%bool read_position  # [deg] 位置の読み込み~%bool read_velosity  # [deg/sec] 角速度の読み込み~%bool read_current  # [A] モーター電流の読み込み~%bool read_voltage  # [V] サーボへの入力電圧の読み込み~%bool read_motor_temperature  # [degC] モーター温度の読み込み~%bool read_position_velosity  # [deg][deg/sec] 位置と角速度の読み込み~%bool read_position_current  # [deg][A] 位置と電流の読み込み~%bool read_position_velosity_current  # [deg][deg/sec][A] 位置と角速度と電流の読み込み~%~%#--- アドレスを指定してパラメータを操作~%bool set_parameter_by_address~%uint8 address_to_set~%uint8 length_set  # 1~7 書き込むデータのバイト数~%uint8[] data_to_set~%~%bool read_parameter_by_address~%uint8 address_to_read~%uint8 length_read  # 1~7 読み込むデータのバイト数~%~%~%"))
+  (cl:format cl:nil "###############################################################################~%# dxl_control nodeに送るコマンド~%# 実行したいコマンドをtrueにしてpublishすると実行される~%# 送信するデータがあるものは該当するデータを埋めてからpublishすること~%# 対象の関節をjoint_indexで指定するか，全ての関節を対象とする場合はtarget_allをtrueにする~%#~%# Dynamixelが<D>であり，書かれているものには対応している~%###############################################################################~%~%#--- 対称を指定~%uint8 joint_index  # index number of joint~%bool target_all    # 全ての関節を対象とする場合はこれをtrueにする．その場合joint_indexは無意味~%~%#--- 書き込み~%bool set_position           # <D>　目標位置を指示する target_positionが必要~%~%bool change_mode_to_free    # <D>　モーターをフリーにする~%bool change_mode_to_active  # <D>　モーターの制御を有効化する．トルクが入る~%bool clear_error            # <D>　エラーによる停止状態を解除する~%~%float64[] target_position     # [deg]~%~%# <D>　PIDゲインを設定する．~%# Dynamixelの場合はそのまま書き込まれる値~%bool set_pid_gain ~%bool set_pid_ ~%uint32 p_gain  #  Dynamixel:[-]~%uint32 i_gain  #  Dynamixel:[-]~%uint32 d_gain  #  Dynamixel:[-]~%~%#--- 読み込み~%bool read_position  # [deg] 位置の読み込み~%bool read_velosity  # [deg/sec] 角速度の読み込み~%bool read_current  # [A] モーター電流の読み込み~%bool read_voltage  # [V] サーボへの入力電圧の読み込み~%bool read_motor_temperature  # [degC] モーター温度の読み込み~%bool read_position_velosity  # [deg][deg/sec] 位置と角速度の読み込み~%bool read_position_current  # [deg][A] 位置と電流の読み込み~%bool read_position_velosity_current  # [deg][deg/sec][A] 位置と角速度と電流の読み込み~%~%#--- アドレスを指定してパラメータを操作~%bool set_parameter_by_address~%uint8 address_to_set~%uint8 length_set  # 1~7 書き込むデータのバイト数~%uint8[] data_to_set~%~%bool read_parameter_by_address~%uint8 address_to_read~%uint8 length_read  # 1~7 読み込むデータのバイト数~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'snake_joint_command4V2)))
   "Returns full string definition for message of type 'snake_joint_command4V2"
-  (cl:format cl:nil "###############################################################################~%# dxl_control nodeに送るコマンド~%# 実行したいコマンドをtrueにしてpublishすると実行される~%# 送信するデータがあるものは該当するデータを埋めてからpublishすること~%# 対象の関節をjoint_indexで指定するか，全ての関節を対象とする場合はtarget_allをtrueにする~%#~%# Dynamixelが<D>であり，書かれているものには対応している~%###############################################################################~%~%#--- 対称を指定~%uint8 joint_index  # index number of joint~%bool target_all    # 全ての関節を対象とする場合はこれをtrueにする．その場合joint_indexは無意味~%~%#--- 書き込み~%bool set_position           # <D>　目標位置を指示する target_positionが必要~%~%bool change_mode_to_free    # <D>　モーターをフリーにする~%bool change_mode_to_active  # <D>　モーターの制御を有効化する．トルクが入る~%bool clear_error            # <D>　エラーによる停止状態を解除する~%~%float64[] target_position     # [deg]~%~%# <D>　PIDゲインを設定する．~%# Dynamixelの場合はそのまま書き込まれる値~%bool set_pid_gain  ~%uint32 p_gain  #  Dynamixel:[-]~%uint32 i_gain  #  Dynamixel:[-]~%uint32 d_gain  #  Dynamixel:[-]~%~%#--- 読み込み~%bool read_position  # [deg] 位置の読み込み~%bool read_velosity  # [deg/sec] 角速度の読み込み~%bool read_current  # [A] モーター電流の読み込み~%bool read_voltage  # [V] サーボへの入力電圧の読み込み~%bool read_motor_temperature  # [degC] モーター温度の読み込み~%bool read_position_velosity  # [deg][deg/sec] 位置と角速度の読み込み~%bool read_position_current  # [deg][A] 位置と電流の読み込み~%bool read_position_velosity_current  # [deg][deg/sec][A] 位置と角速度と電流の読み込み~%~%#--- アドレスを指定してパラメータを操作~%bool set_parameter_by_address~%uint8 address_to_set~%uint8 length_set  # 1~7 書き込むデータのバイト数~%uint8[] data_to_set~%~%bool read_parameter_by_address~%uint8 address_to_read~%uint8 length_read  # 1~7 読み込むデータのバイト数~%~%~%"))
+  (cl:format cl:nil "###############################################################################~%# dxl_control nodeに送るコマンド~%# 実行したいコマンドをtrueにしてpublishすると実行される~%# 送信するデータがあるものは該当するデータを埋めてからpublishすること~%# 対象の関節をjoint_indexで指定するか，全ての関節を対象とする場合はtarget_allをtrueにする~%#~%# Dynamixelが<D>であり，書かれているものには対応している~%###############################################################################~%~%#--- 対称を指定~%uint8 joint_index  # index number of joint~%bool target_all    # 全ての関節を対象とする場合はこれをtrueにする．その場合joint_indexは無意味~%~%#--- 書き込み~%bool set_position           # <D>　目標位置を指示する target_positionが必要~%~%bool change_mode_to_free    # <D>　モーターをフリーにする~%bool change_mode_to_active  # <D>　モーターの制御を有効化する．トルクが入る~%bool clear_error            # <D>　エラーによる停止状態を解除する~%~%float64[] target_position     # [deg]~%~%# <D>　PIDゲインを設定する．~%# Dynamixelの場合はそのまま書き込まれる値~%bool set_pid_gain ~%bool set_pid_ ~%uint32 p_gain  #  Dynamixel:[-]~%uint32 i_gain  #  Dynamixel:[-]~%uint32 d_gain  #  Dynamixel:[-]~%~%#--- 読み込み~%bool read_position  # [deg] 位置の読み込み~%bool read_velosity  # [deg/sec] 角速度の読み込み~%bool read_current  # [A] モーター電流の読み込み~%bool read_voltage  # [V] サーボへの入力電圧の読み込み~%bool read_motor_temperature  # [degC] モーター温度の読み込み~%bool read_position_velosity  # [deg][deg/sec] 位置と角速度の読み込み~%bool read_position_current  # [deg][A] 位置と電流の読み込み~%bool read_position_velosity_current  # [deg][deg/sec][A] 位置と角速度と電流の読み込み~%~%#--- アドレスを指定してパラメータを操作~%bool set_parameter_by_address~%uint8 address_to_set~%uint8 length_set  # 1~7 書き込むデータのバイト数~%uint8[] data_to_set~%~%bool read_parameter_by_address~%uint8 address_to_read~%uint8 length_read  # 1~7 読み込むデータのバイト数~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <snake_joint_command4V2>))
   (cl:+ 0
      1
@@ -425,6 +437,7 @@
      1
      1
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'target_position) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 8)))
+     1
      1
      4
      4
@@ -456,6 +469,7 @@
     (cl:cons ':clear_error (clear_error msg))
     (cl:cons ':target_position (target_position msg))
     (cl:cons ':set_pid_gain (set_pid_gain msg))
+    (cl:cons ':set_pid_ (set_pid_ msg))
     (cl:cons ':p_gain (p_gain msg))
     (cl:cons ':i_gain (i_gain msg))
     (cl:cons ':d_gain (d_gain msg))

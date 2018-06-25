@@ -12,7 +12,7 @@ void PedalWaveMotion::set_alpha(double alpha)
 	serpenoid_curve.alpha = alpha;
 }
 
-void PedalWaveMotion::set_l(double l) 
+void PedalWaveMotion::set_l(double l)
 {
 	serpenoid_curve.l = l;
 }
@@ -25,9 +25,9 @@ void PedalWaveMotion::set_v(double v)
 
 /*
  * @fn
- * @brief 
- * @param 
- * @paran 
+ * @brief
+ * @param
+ * @paran
  * @return なし
  * @detail
 */
@@ -50,7 +50,7 @@ void PedalWaveMotion::PedalWaveMotionByShift(RobotSpec spec)
 
 		PedalWaveMotion::CalculateTargetAngle(spec);
 		pre_s_ = pre_s_ + step_s_;
-		
+
 	}
 	print_parameters();
 }

@@ -15,6 +15,8 @@
           TARGET_POSITION
           SET_PID_GAIN-VAL
           SET_PID_GAIN
+          SET_PID_-VAL
+          SET_PID_
           P_GAIN-VAL
           P_GAIN
           I_GAIN-VAL

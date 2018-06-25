@@ -18,6 +18,10 @@
 
 #include "shift_control_method.h"
 
+#define FORWARD 1
+#define BACK    0
+
+
 class WindingGait: public ShiftControlMethod {
  public:
 	virtual ~WindingGait(){}
@@ -36,27 +40,24 @@ class WindingGait: public ShiftControlMethod {
 		target_angle_ = 0;
 
 		serpenoid_curve.alpha = M_PI/4;         // くねり角[rad]
-		serpenoid_curve.l     = (num_link_*link_length_)/4;         // 曲線の1/4周期の長さ[m]
-		serpenoid_curve.v     = 0.00;
+		serpenoid_curve.l     = (num_link_*link_length_)/4;      // 曲線の1/4周期の長さ[m]
 
-		s_ 	= 0;
+		s_ 		= 0;
 		S_T 	= 0;
-		dt_ 	= 0.010;  // サンプリングタイム10[msec]
 
 		pre_s_  = 0;
 		step_s_ = ds/28;
 
-		psi_ 	= 0;
-		psi_hyper_ = 0;
-
-		tau_   = 0;
 		kappa_ = 0;
 		bias_  = 0;
+
+		direction_ = pre_direction_= FORWARD;
+
 		Init(spec);
 	}
 
 	//--- 動作
-	void Winding(RobotSpec spec);
+	void ChangeDirection(RobotSpec spec);
 	void WindingShift(RobotSpec spec);
 	void CalculateTargetAngleToWinding(RobotSpec spec);
 	void CalculateCurvature();
@@ -74,13 +75,15 @@ class WindingGait: public ShiftControlMethod {
 
 	void print_parameters();
 
-	double s_, 	dt_ ;
+	double s_;
 	double pre_s_;
 	double step_s_;
 	double target_angle_;
-	   int num_link_;
 	double link_length_;
 	double S_T;
+
+	   int num_link_;
+	   int direction_, pre_direction_;
 
 };
 

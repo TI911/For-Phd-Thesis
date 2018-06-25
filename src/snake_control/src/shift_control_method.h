@@ -11,6 +11,8 @@
  *
  *     			  => HOW TO MAKE max_hold_num ???
  *
+ *      2018/05/01
+ *
  */
 
 #ifndef SNAKE_CONTROL_SRC_SHIFT_CONTROL_METHOD_H_
@@ -37,7 +39,8 @@ private:
 
       /***   ヘビの各関節の vector のなかのデータ,  シフトするパラメータ    ***/
    typedef struct{
-	   std::vector<double> kappa_zero_hold;
+	   std::vector<double> kappa_zero_pitch_hold;
+	   std::vector<double> kappa_zero_yaw_hold;
 	   std::vector<double> kappa_hold;
 	   std::vector<double> tau_hold;
 	   std::vector<double> bias_hold;
@@ -55,7 +58,8 @@ private:
    typedef struct{
 	   std::vector<double> angle;  /*  関節角度 */
 	   std::vector<double> bias;   /*  操舵バイアス   */
-	   std::vector<double> kappa_zero; /* 式(3.9)の πs/2l をシフトするため */
+	   std::vector<double> kappa_zero_pitch; /* 式(3.9)の πs/2l をシフトするため,  */
+	   std::vector<double> kappa_zero_yaw;
 	   std::vector<double> kappa;  /*  曲率  */
 	   std::vector<double> tau;    /*  捩率  */
 	   std::vector<double> psi;	   /*  常螺旋曲線の捻転量 */
@@ -75,7 +79,8 @@ public:
 	 /*  パラメータｔと螺旋曲線に沿った長さｓの関係により計算した曲率，捩率などをこの変数に保存する  */
 
 	double kappa_;
-	double kappa_zero_;
+	double kappa_zero_pitch_;
+	double kappa_zero_yaw_;
 
 	double tau_;
 	double first_tau_;

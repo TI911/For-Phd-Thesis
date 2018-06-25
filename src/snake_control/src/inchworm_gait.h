@@ -29,7 +29,7 @@ public:
 		t = 0;
 		psi_ = 0;
 
-		a_ = 0.10;
+		a_ = 0.13;
 		b_ = 0.00,
 		c_ = 0.03,
 		d_ = 2,  //d
@@ -48,7 +48,8 @@ public:
 	void add_s(double add_s){set_s(add_s + s_); }
 	void set_psi(double psi);
 	void add_psi(double add_psi){set_psi(add_psi+psi_); }
-
+	void set_pitch(double pitch);
+	void add_pitch(double pitch_add){ set_pitch(e_ + pitch_add); }
 	void InchwormGaitByShift(RobotSpec spec);
 	void InchwormGaitToRolling(RobotSpec spec);
 

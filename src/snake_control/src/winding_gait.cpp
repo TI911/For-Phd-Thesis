@@ -45,17 +45,15 @@ void WindingGait::set_l(double l)
 */
 void WindingGait::set_bias(double bias)
 {
-	double kp_bias = 0.22;      // 操舵バイアス比例ゲイン
-	double biasmax = M_PI/8;	// 最大バイアス 単位は[rad]
+	double kp_bias = 20; //0.22;      // 操舵バイアス比例ゲイン
+	double biasmax = M_PI/2;	// 最大バイアス 単位は[rad]
 	double b = 0;
 
 	b = bias* kp_bias * serpenoid_curve.v; // 操舵バイアス（速度にも比例してインクリメント）
-	if(b > biasmax) b = biasmax;
-	if(b < -biasmax) b = -biasmax;
-
+	if (b >  biasmax) b =  biasmax;
+	if (b < -biasmax) b = -biasmax;
 	bias_ = b;
 }
-
 
 /*
  * @fn
@@ -67,9 +65,35 @@ void WindingGait::set_bias(double bias)
 */
 void WindingGait::set_v(double v)
 {
-	serpenoid_curve.v = v;
-	s_ += v * dt_;
+	if (v > 0) direction_ = FORWARD;
+	if (v < 0) direction_ = BACK;
+
+	s_ += serpenoid_curve.v = v;
 }
+
+void WindingGait::ChangeDirection(RobotSpec spec)
+{
+	int NUM_JOINT = spec.num_joint();
+	if (direction_==FORWARD) {
+		double temp_s = (2 * serpenoid_curve.l / M_PI)
+				* asin( (2 * serpenoid_curve.l * hold_data.shift_param[0].kappa_hold[0]) / ( M_PI * serpenoid_curve.alpha) );
+		s_ = temp_s;
+		pre_s_ = temp_s;
+
+	} else if (direction_ == BACK) {
+		int hold_num = (int)hold_data.shift_param[0].kappa_hold.size();
+		//最後尾の曲率から，仮のsを求める
+		double temp_s = (2 * serpenoid_curve.l / M_PI)
+				* asin( (2*serpenoid_curve.l * hold_data.shift_param[NUM_JOINT-1].kappa_hold[hold_num-1]) / ( M_PI*serpenoid_curve.alpha) );
+		s_ = temp_s;
+		pre_s_ = temp_s;
+
+		//最後尾のバイアスを参照する
+		bias_ = hold_data.shift_param[NUM_JOINT-1].bias_hold[1];
+	}
+	pre_direction_ = direction_;
+}
+
 
 /*
  * @fn
@@ -81,12 +105,11 @@ void WindingGait::set_v(double v)
 */
 void WindingGait::print_parameters()
 {
-	ROS_INFO("*");
 	ROS_INFO("* -->  serpenoid_curve.alpha = [%4.3f rad] *", serpenoid_curve.alpha);
 	ROS_INFO("* -->  serpenoid_curve.l     = [%4.3f m  ] *", serpenoid_curve.l);
 	ROS_INFO("* -->                      s = [%4.3f m  ] *", s_);
 	ROS_INFO("* -->                   bias = [%4.3f m  ] *", bias_);
-	ROS_INFO("------------     Winding Gait     ----------");
+	ROS_INFO("---------     Winding Gait     -------------");
 }
 
 /*
@@ -99,25 +122,25 @@ void WindingGait::print_parameters()
 */
 void WindingGait::WindingShift(RobotSpec spec)
 {
-	while(s_ > (pre_s_ + step_s_)){  //
+	if (direction_ != pre_direction_) WindingGait::ChangeDirection(spec);
 
-		WindingGait::CalculateCurvature();
+	if (direction_ == FORWARD) {
+		while(s_ > (pre_s_ + step_s_)){  //
 
-		ShiftControlMethod::Shift_Param_Forward(spec);
+			WindingGait::CalculateCurvature();
+			ShiftControlMethod::Shift_Param_Forward(spec);
+			WindingGait::CalculateTargetAngleToWinding(spec);
+			pre_s_ = pre_s_ + step_s_;
+		}
 
-		pre_s_ = pre_s_ + step_s_;
-		WindingGait::CalculateTargetAngleToWinding(spec);
+	}else if (direction_ == BACK){
+		while (s_ < (pre_s_ - step_s_)) {
 
-	}
-
-	while(s_ < (pre_s_ - step_s_)){  //
-
-		WindingGait::CalculateCurvature();
-
-		ShiftControlMethod::Shift_Param_Back(spec);
-
-		pre_s_ = pre_s_ - step_s_;
-		WindingGait::CalculateTargetAngleToWinding(spec);
+			WindingGait::CalculateCurvature();
+			ShiftControlMethod::Shift_Param_Back(spec);
+			WindingGait::CalculateTargetAngleToWinding(spec);
+			pre_s_ = pre_s_ - step_s_;
+		}
 
 	}
 	print_parameters();
@@ -149,8 +172,10 @@ void WindingGait::CalculateCurvature(){
 void WindingGait::CalculateTargetAngleToWinding(RobotSpec spec)
 {
 	snake_model_param.angle.clear();
+	//ROS_INFO("snake_model_param.angle.size = %d", (int)snake_model_param.angle.size());
 
 	for(int i=0; i<num_link_; i++){
+
 		if(i%2){  /*  (奇数番目) pitch joints?   */
 			target_angle_ = 0;          //-2*link_length_*snake_model_param.kappa[i]*sin(snake_model_param.psi[i]);
 										//横うねり推進ではroll 軸の回転はしないため，ψ(s)＝０になる．//そのため，計算上はpis_を消しでもいい．
@@ -162,3 +187,6 @@ void WindingGait::CalculateTargetAngleToWinding(RobotSpec spec)
 		snake_model_param.angle.push_back(target_angle_);
 	}
 }
+
+
+/*------ END ------*/

@@ -102,6 +102,14 @@ snake_msgs/snake_joint_command4V2.h
 snake_msgs/snake_joint_data4V2.h
 /home/snake/catkin_ws/src/dxl_control/src/snake_msgs/snake_joint_data4V2.h
 
+/home/snake/catkin_ws/src/dxl_control/src/main.cpp
+stdint.h
+-
+ros/ros.h
+-
+dxl_control.h
+/home/snake/catkin_ws/src/dxl_control/src/dxl_control.h
+
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h
 -

@@ -80,10 +80,6 @@ robot_spec.h
 shift_control_method.h
 /home/snake/catkin_ws/src/snake_control/src/shift_control_method.h
 
-/home/snake/catkin_ws/src/snake_control/src/inchworm_gait.cpp
-inchworm_gait.h
-/home/snake/catkin_ws/src/snake_control/src/inchworm_gait.h
-
 /home/snake/catkin_ws/src/snake_control/src/inchworm_gait.h
 std_msgs/Float64.h
 /home/snake/catkin_ws/src/snake_control/src/std_msgs/Float64.h
@@ -103,6 +99,10 @@ robot_spec.h
 /home/snake/catkin_ws/src/snake_control/src/robot_spec.h
 snake_control.h
 /home/snake/catkin_ws/src/snake_control/src/snake_control.h
+
+/home/snake/catkin_ws/src/snake_control/src/pedal_wave_motion.cpp
+pedal_wave_motion.h
+/home/snake/catkin_ws/src/snake_control/src/pedal_wave_motion.h
 
 /home/snake/catkin_ws/src/snake_control/src/pedal_wave_motion.h
 std_msgs/Float64.h

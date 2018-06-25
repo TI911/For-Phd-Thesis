@@ -22,7 +22,8 @@ float64[] target_position     # [deg]
 
 # <D>　PIDゲインを設定する．
 # Dynamixelの場合はそのまま書き込まれる値
-bool set_pid_gain  
+bool set_pid_gain 
+bool set_pid_ 
 uint32 p_gain  #  Dynamixel:[-]
 uint32 i_gain  #  Dynamixel:[-]
 uint32 d_gain  #  Dynamixel:[-]

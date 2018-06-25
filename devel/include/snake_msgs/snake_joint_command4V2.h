@@ -32,6 +32,7 @@ struct snake_joint_command4V2_
     , clear_error(false)
     , target_position()
     , set_pid_gain(false)
+    , set_pid_(false)
     , p_gain(0)
     , i_gain(0)
     , d_gain(0)
@@ -60,6 +61,7 @@ struct snake_joint_command4V2_
     , clear_error(false)
     , target_position(_alloc)
     , set_pid_gain(false)
+    , set_pid_(false)
     , p_gain(0)
     , i_gain(0)
     , d_gain(0)
@@ -106,6 +108,9 @@ struct snake_joint_command4V2_
 
    typedef uint8_t _set_pid_gain_type;
   _set_pid_gain_type set_pid_gain;
+
+   typedef uint8_t _set_pid__type;
+  _set_pid__type set_pid_;
 
    typedef uint32_t _p_gain_type;
   _p_gain_type p_gain;
@@ -238,12 +243,12 @@ struct MD5Sum< ::snake_msgs::snake_joint_command4V2_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "98733b4db6a7f1e04c0c9705a6f736e6";
+    return "ff9d83f9d23ae1d20dd9df2f830a01e3";
   }
 
   static const char* value(const ::snake_msgs::snake_joint_command4V2_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x98733b4db6a7f1e0ULL;
-  static const uint64_t static_value2 = 0x4c0c9705a6f736e6ULL;
+  static const uint64_t static_value1 = 0xff9d83f9d23ae1d2ULL;
+  static const uint64_t static_value2 = 0x0dd9df2f830a01e3ULL;
 };
 
 template<class ContainerAllocator>
@@ -286,7 +291,8 @@ float64[] target_position     # [deg]\n\
 \n\
 # <D>　PIDゲインを設定する．\n\
 # Dynamixelの場合はそのまま書き込まれる値\n\
-bool set_pid_gain  \n\
+bool set_pid_gain \n\
+bool set_pid_ \n\
 uint32 p_gain  #  Dynamixel:[-]\n\
 uint32 i_gain  #  Dynamixel:[-]\n\
 uint32 d_gain  #  Dynamixel:[-]\n\
@@ -336,6 +342,7 @@ namespace serialization
       stream.next(m.clear_error);
       stream.next(m.target_position);
       stream.next(m.set_pid_gain);
+      stream.next(m.set_pid_);
       stream.next(m.p_gain);
       stream.next(m.i_gain);
       stream.next(m.d_gain);
@@ -392,6 +399,8 @@ struct Printer< ::snake_msgs::snake_joint_command4V2_<ContainerAllocator> >
     }
     s << indent << "set_pid_gain: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.set_pid_gain);
+    s << indent << "set_pid_: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.set_pid_);
     s << indent << "p_gain: ";
     Printer<uint32_t>::stream(s, indent + "  ", v.p_gain);
     s << indent << "i_gain: ";
