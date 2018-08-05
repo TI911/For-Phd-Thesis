@@ -97,44 +97,66 @@ void PedalWaveMotion::ChangeDirection(RobotSpec spec)
 	pre_direction_ = direction_;
 }
 
+// void PedalWaveMotion::CalculateCurvature()
+// {
+// 	double k   = (M_PI/2) * (pre_s_/l_);
+// 	kappa_      = k;
+// }
+//
+// void PedalWaveMotion::CalculateTargetAngle(RobotSpec spec)
+// {
+// 	snake_model_param.angle.clear();
+//
+// 	double kappa = 0,
+// 			kappa_0_pitch = 0,
+// 			kappa_0_yaw   = 0;
+//
+// 	snake_model_param.angle.clear();
+//
+// 	for(int i=0; i<num_link_; i++){
+// 		kappa   	  = snake_model_param.kappa[i];
+// 		kappa_0_pitch = snake_model_param.kappa_zero_pitch[i];
+// 		kappa_0_yaw   = snake_model_param.kappa_zero_yaw[i];
+//
+// 		if(i%2){   /* 奇数番目 pitch joints ? ロボットの構造による*/
+// 			target_angle_ =
+// 					(-2*link_length_*3.5*sin(2*M_PI*kappa))+kappa_0_pitch;
+//
+// 		}else{    /* 偶数番目 yaw joints ? ロボットの構造による*/
+// 			target_angle_ =
+// 					 (2*link_length_*2*sin(4*M_PI*kappa))+kappa_0_yaw;
+// 		}
+// 		snake_model_param.angle.push_back(target_angle_);
+// 	}
+// }
+
+
+
 void PedalWaveMotion::CalculateCurvature()
 {
-	double k   = (M_PI/2) * (pre_s_/l_);
-	kappa_      = k;
+	double a = (M_PI*serpenoid_curve.alpha) / (2*serpenoid_curve.l);
+	double ss = (M_PI/2) * (pre_s_/serpenoid_curve.l);
+	kappa_ = ss;//a*sin(ss);
 }
 
 void PedalWaveMotion::CalculateTargetAngle(RobotSpec spec)
 {
 	snake_model_param.angle.clear();
 
-	double kappa = 0,
-			kappa_0_pitch = 0,
-			kappa_0_yaw   = 0;
-
-	snake_model_param.angle.clear();
+	double a = (M_PI*serpenoid_curve.alpha) / (2*serpenoid_curve.l);
 
 	for(int i=0; i<num_link_; i++){
-		kappa   	  = snake_model_param.kappa[i];
-		kappa_0_pitch = snake_model_param.kappa_zero_pitch[i];
-		kappa_0_yaw   = snake_model_param.kappa_zero_yaw[i];
 
-		if(i%2){   /* 奇数番目 pitch joints ? ロボットの構造による*/
+		//(奇数番目)
+		if(i%2){
 			target_angle_ =
-					(-2*link_length_*kappa_0_pitch*sin(2*M_PI*kappa));
+					-2*link_length_*sin(snake_model_param.kappa[i]*4*M_PI)*a;
 
-		}else{    /* 偶数番目 yaw joints ? ロボットの構造による*/
+		//(偶数番目)
+		}else{
 			target_angle_ =
-					 (2*link_length_*kappa_0_yaw*sin(4*M_PI*kappa));
+					2*link_length_*sin(snake_model_param.kappa[i]*2*M_PI)*a;  //*sin(2*M_PI*(M_PI/2) * (pre_s_/serpenoid_curve.l));
 		}
-
-//		if(i%2){   /* 奇数番目 pitch joints ? ロボットの構造による*/
-//			target_angle_ =
-//					(-2*link_length_*6*sin(2*M_PI*kappa));
-//
-//		}else{    /* 偶数番目 yaw joints ? ロボットの構造による*/
-//			target_angle_ =
-//					 (2*link_length_*6*sin(8*M_PI*kappa));
-//		}
 
 		snake_model_param.angle.push_back(target_angle_);
 	}
